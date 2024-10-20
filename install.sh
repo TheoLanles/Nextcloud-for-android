@@ -31,8 +31,6 @@ fastcgi.server = ( ".php" => ((
                      "bin-path" => "/data/data/com.termux/files/usr/bin/php-cgi",
                      "socket" => "/data/data/com.termux/files/usr/tmp/php.socket",
                      "bin-environment" => (
-                         "PHP_FCGI_CHILDREN" => "4",
-                         "PHP_FCGI_MAX_REQUESTS" => "1000",
                          "PHP_MEMORY_LIMIT" => "512M"
                      )
                  )))
