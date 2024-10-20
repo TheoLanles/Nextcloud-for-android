@@ -1,5 +1,5 @@
 #!/bin/bash
-pkg install -y unzip sqlite php lighttpd php-gd
+pkg install -y unzip sqlite php lighttpd php-gd php-opcache
 wget --no-check-certificate https://download.nextcloud.com/server/releases/latest.zip
 unzip latest.zip
 sed -i 's/localhost:8080/*/g' ./nextcloud/config/config.sample.php
