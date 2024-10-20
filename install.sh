@@ -29,7 +29,8 @@ server.modules = (
 )
 fastcgi.server = ( ".php" => ((
                      "bin-path" => "/data/data/com.termux/files/usr/bin/php-cgi",
-                     "socket" => "/data/data/com.termux/files/usr/tmp/php.socket"
+                     "socket" => "/data/data/com.termux/files/usr/tmp/php.socket",
+                     "PHP_MEMORY_LIMIT" => "512M"
                  )))
 ' > lighttpd.conf
 mkdir -p ./.termux/boot
