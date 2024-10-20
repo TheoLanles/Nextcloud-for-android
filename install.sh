@@ -1,7 +1,5 @@
 #!/bin/bash
-pkg install -y unzip sqlite php lighttpd php-gd wget
-wget https://termux.librehat.com/apt/termux-main/pool/main/p/php-apache-opcache/php-apache-opcache_8.3.10-1_aarch64.deb -O php-apache-opcache.deb
-dpkg -i php-apache-opcache.deb
+pkg install -y unzip sqlite php lighttpd php-gd
 wget --no-check-certificate https://download.nextcloud.com/server/releases/latest.zip
 unzip latest.zip
 sed -i 's/localhost:8080/*/g' ./nextcloud/config/config.sample.php
