@@ -1,5 +1,5 @@
 #!/bin/bash
-pkg install -y unzip sqlite php lighttpd php-gd php-opcache
+pkg install -y unzip sqlite php lighttpd php-gd
 wget --no-check-certificate https://download.nextcloud.com/server/releases/latest.zip
 unzip latest.zip
 sed -i 's/localhost:8080/*/g' ./nextcloud/config/config.sample.php
@@ -30,7 +30,9 @@ server.modules = (
 fastcgi.server = ( ".php" => ((
                      "bin-path" => "/data/data/com.termux/files/usr/bin/php-cgi",
                      "socket" => "/data/data/com.termux/files/usr/tmp/php.socket",
-                     "bin-environment" => (
+                      "bin-environment" => (
+                         "PHP_FCGI_CHILDREN" => "4",
+                         "PHP_FCGI_MAX_REQUESTS" => "1000",
                          "PHP_MEMORY_LIMIT" => "512M"
                      )
                  )))
