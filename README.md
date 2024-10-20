@@ -12,6 +12,7 @@ open termux and paste following code start:
 then find where php.ini is located and do :
 
 ` php --ini `
+` nano path/to/php/php.ini `
 
 if no php.ini file exists, create one with this in it:
 
